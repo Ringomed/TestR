@@ -26,7 +26,7 @@ library(bsplus)
 #library(stringi)
 library(pagedown)
 
-Sys.setlocale(locale = "English")
+Sys.setlocale("LC_ALL", "C")
 
 ggplot2::theme_set(ggplot2::theme_minimal())
 thematic::thematic_shiny()
