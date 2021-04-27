@@ -1,0 +1,236 @@
+﻿Chapter,Question_number,Possible_answers,Answer_number
+01_Geography,1,Africa,1
+01_Geography,1,Asia,2
+01_Geography,1,Europe,3
+01_Geography,1,Australia,4
+01_Geography,1,Antarctica,5
+01_Geography,2,Australia,1
+01_Geography,2,India,2
+01_Geography,2,USA,3
+01_Geography,2,Canada,4
+01_Geography,2,Germany,5
+01_Geography,3,Adriatic sea,1
+01_Geography,3,Celebes sea,2
+01_Geography,3,Mediterranean sea,3
+01_Geography,3,Sargasso sea,4
+01_Geography,3,Berring's sea,5
+01_Geography,4,100 %,1
+01_Geography,4,9 %,2
+01_Geography,4,53 %,3
+01_Geography,4,87 %,4
+01_Geography,4,22 %,5
+01_Geography,5,Peru,1
+01_Geography,5,Columbia,2
+01_Geography,5,Chile,3
+01_Geography,5,Bolivia,4
+01_Geography,5,Venezuela,5
+01_Geography,6,Sudan,1
+01_Geography,6,Libya,2
+01_Geography,6,Egypt,3
+01_Geography,6,Algeria,4
+01_Geography,6,Tunisia,5
+01_Geography,7,Sudan,1
+01_Geography,7,Libya,2
+01_Geography,7,Morocco,3
+01_Geography,7,Algeria,4
+01_Geography,7,Tunisia,5
+01_Geography,8,Bolivia,1
+01_Geography,8,Ecuador,2
+01_Geography,8,Chile,3
+01_Geography,8,Peru,4
+01_Geography,8,Venezuela,5
+02_History,9,Damascus,1
+02_History,9,Jerusalem,2
+02_History,9,Jericho,3
+02_History,9,Athens,4
+02_History,9,Machu Picchu,5
+01_Geography,10,Hawaii,1
+01_Geography,10,California,2
+01_Geography,10,Alaska,3
+01_Geography,10,Washington,4
+01_Geography,10,Florida,5
+01_Geography,11,Australia,1
+01_Geography,11,Africa,2
+01_Geography,11,South America,3
+01_Geography,11,Europe,4
+01_Geography,11,Antarctica,5
+01_Geography,12,United Arab Emirates,1
+01_Geography,12,Jordan,2
+01_Geography,12,Saudi Arabia,3
+01_Geography,12,Yemen,4
+01_Geography,12,Oman,5
+01_Geography,13,Russia,1
+01_Geography,13,Canada,2
+01_Geography,13,China,3
+01_Geography,13,USA,4
+01_Geography,13,Chile,5
+01_Geography,14,Australia,1
+01_Geography,14,Canada,2
+01_Geography,14,China,3
+01_Geography,14,USA,4
+01_Geography,14,Chile,5
+01_Geography,15,Australia,1
+01_Geography,15,Asia,2
+01_Geography,15,Europe,3
+01_Geography,15,Antarctica,4
+01_Geography,15,Africa,5
+01_Geography,16,Peru,1
+01_Geography,16,Venezuela,2
+01_Geography,16,Colombia,3
+01_Geography,16,Brazil,4
+01_Geography,16,Africa,5
+01_Geography,17,Chad,1
+01_Geography,17,Burkina Faso,2
+01_Geography,17,Congo,3
+01_Geography,17,Niger,4
+01_Geography,17,Zimbabve,5
+01_Geography,18,Malta,1
+01_Geography,18,Burkina Faso,2
+01_Geography,18,Monaco,3
+01_Geography,18,Luxembourg,4
+01_Geography,18,Vatican City,5
+01_Geography,19,Mount Everest,1
+01_Geography,19,K2,2
+01_Geography,19,the Alps,3
+01_Geography,19,Matterhorn,4
+01_Geography,19,Annapurna,5
+01_Geography,20,Triberg,1
+01_Geography,20,Kjelfossen,2
+01_Geography,20,Rhine,3
+01_Geography,20,Krimml,4
+01_Geography,20,Miljacka,5
+02_History,21,Shabaka stone,1
+02_History,21,Code of Hammurabi,2
+02_History,21,Rosetta stone,3
+02_History,21,Hebrew Torah,4
+02_History,21,Assyrian law,5
+02_History,22,London,1
+02_History,22,Rome,2
+02_History,22,New York,3
+02_History,22,Beijing,4
+02_History,22,Berlin,5
+02_History,23,116 years,1
+02_History,23,100  years,2
+02_History,23,99 years,3
+02_History,23,86 years,4
+02_History,23,101 years,5
+02_History,24,1920,1
+02_History,24,1690,2
+02_History,24,1760,3
+02_History,24,1840,4
+02_History,24,1970,5
+02_History,25,Nauset,1
+02_History,25,Cherokee,2
+02_History,25,Pequot,3
+02_History,25,Mohican,4
+02_History,25,Oneida,5
+02_History,26,Arabs,1
+02_History,26,Romans,2
+02_History,26,Greeks,3
+02_History,26,Indians,4
+02_History,26,Egyptians,5
+02_History,27,Memphis,1
+02_History,27,Thebes,2
+02_History,27,Alexandria,3
+02_History,27,Cairo,4
+02_History,27,Luxor,5
+02_History,28,Nero,1
+02_History,28,Caligula,2
+02_History,28,Augustus,3
+02_History,28,Julius Caesar,4
+02_History,28,Constantin,5
+02_History,29,Cleon's wall,1
+02_History,29,Caesar's wall,2
+02_History,29,Hadrian's wall,3
+02_History,29,Hannibal's wall,4
+02_History,29,Constantin's wall,5
+02_History,30,4,1
+02_History,30,3,2
+02_History,30,2,3
+02_History,30,1,4
+02_History,30,0,5
+01_Geography,31,Aristotle,1
+01_Geography,31,Archimedes,2
+01_Geography,31,Anaximander,3
+01_Geography,31,Euclid,4
+01_Geography,31,Christopher Columbus,5
+03_Physics,32,$\alpha$ particles,1
+03_Physics,32,$\beta$ particles,2
+03_Physics,32,$\gamma$ rays,3
+03_Physics,32,radiowaves,4
+03_Physics,32,X-rays,5
+03_Physics,33,concave lenses,1
+03_Physics,33,convex lenses,2
+03_Physics,33,cylindrical lenses,3
+03_Physics,33,no lens,4
+03_Physics,33,both concave and convex lenses,5
+03_Physics,34,Ohms,1
+03_Physics,34,Amperes,2
+03_Physics,34,Coulombs,3
+03_Physics,34,Farads,4
+03_Physics,34,kilograms,5
+03_Physics,35,is constant for every photon energy,1
+03_Physics,35,increases with increasing energy,2
+03_Physics,35,decreases with increasing energy,3
+03_Physics,35,does not depend on the type of interacting material,4
+03_Physics,35,is always zero,5
+03_Physics,36,doubled,1
+03_Physics,36,halved,2
+03_Physics,36,4 times greater,3
+03_Physics,36,4 times smaller,4
+03_Physics,36,unchanged,5
+04_Soccer,37,6,1
+04_Soccer,37,12,2
+04_Soccer,37,18,3
+04_Soccer,37,22,4
+04_Soccer,37,36,5
+04_Soccer,38,3,1
+04_Soccer,38,6,2
+04_Soccer,38,9,3
+04_Soccer,38,18,4
+04_Soccer,38,27,5
+04_Soccer,39,the Reds,1
+04_Soccer,39,the Foxes,2
+04_Soccer,39,the Magpies,3
+04_Soccer,39,the Gunners,4
+04_Soccer,39,the Boys,5
+04_Soccer,40,England,1
+04_Soccer,40,Italy,2
+04_Soccer,40,Brasil,3
+04_Soccer,40,Germany,4
+04_Soccer,40,France,5
+04_Soccer,41,Alexis Delgado,1
+04_Soccer,41,Gennaro Gattuso,2
+04_Soccer,41,Pepe,3
+04_Soccer,41,Gerardo Bedoya,4
+04_Soccer,41,Paolo Maldini,5
+04_Soccer,42,120 minutes,1
+04_Soccer,42,90 minutes,2
+04_Soccer,42,60 minutes,3
+04_Soccer,42,45 minutes,4
+04_Soccer,42,30 minutes,5
+05_Art,43,Rembrandt,1
+05_Art,43,Raphael,2
+05_Art,43,Titian,3
+05_Art,43,Michelangelo,4
+05_Art,43,Picasso,5
+05_Art,44,Goya,1
+05_Art,44,Monet,2
+05_Art,44,Vermer,3
+05_Art,44,Renoir,4
+05_Art,44,Whistler,5
+05_Art,45,15,1
+05_Art,45,20,2
+05_Art,45,30,3
+05_Art,45,1,4
+05_Art,45,79,5
+05_Art,46,Starkist tuna,1
+05_Art,46,Bush's best beans,2
+05_Art,46,van Camp's pork and beans,3
+05_Art,46,Campbell's soup,4
+05_Art,46,Starbucks coffee,5
+05_Art,47,Charles Saatchi,1
+05_Art,47,John Ruskin,2
+05_Art,47,Clement Greenberg,3
+05_Art,47,John Canaday,4
+05_Art,47,James Kurt,5

@@ -1,0 +1,59 @@
+.tabset_body {
+  padding: 1% 2% 1% 2%;
+  text-align: center;
+}
+
+.qb {
+  margin-top: 20px;
+  padding: 0 2% 0 2%;
+  text-align: center;
+}
+
+.divider{
+    width:5%;
+    height:auto;
+    display:inline-block;
+}
+
+.cir {
+  height: 100px;
+  width: 100px;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  border-width: 100px;
+  border-radius: 50%;
+  background: yellow;
+}
+
+#img-id{
+  height: 50px;
+}
+
+.options{
+  display: inline-block;
+}
+
+.liclass{
+  color: #b9d4df;
+}
+
+.divs{
+  text-align: right;
+}
+
+
+.divs2{
+  text-align: justify;
+  /*top right bottom left*/
+  padding: 1% 2% 1% 2%;
+  margin: 0 2% 1% 2%;
+  border-width: 20px;
+  border-color: black;
+}
+
+#bp{
+  border-width: 2px;
+  border-color: gray;
+}
+

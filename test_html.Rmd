@@ -1,0 +1,186 @@
+---
+title: |
+  <left>`r params$course`</left>
+  <right>`r params$test_date`</right>
+  <br>`r LETTERS[params$choices_version]`
+
+output: html_document
+
+params:
+  #q_all: NA
+  q: NA
+  n_chosen: NA
+  q_all: NA
+  qa: NA
+  add_correct: NA
+  course: NA
+  questions_version: NA
+  choices_version: NA
+  test_date: NA
+fontsize: 11pt
+---
+  
+
+<style type="text/css">
+  
+body{ /* Normal  */
+      font-size: 10pt;
+}
+td {  /* Table  */
+    font-size: 8px;
+}
+h1.title {
+  font-size: 18pt;
+  color: BlueRibbon;
+  text-align: center;
+}
+h1 { /* Header 1 */
+    font-size: 28px;
+  color: DarkBlue;
+}
+h2 { /* Header 2 */
+    font-size: 22px;
+  color: DarkBlue;
+}
+h3 { /* Header 3 */
+    font-size: 18px;
+  font-family: "Times New Roman", Times, serif;
+  color: DarkBlue;
+}
+code.r{ /* Code block */
+    font-size: 12px;
+}
+pre { /* Code block - determines code spacing between lines */
+    font-size: 14px;
+}
+</style>
+
+  
+```{r setup, include = FALSE}
+#knitr::opts_chunk$set(cache = FALSE)
+```
+  
+```{r echo = FALSE, comment = NA, message = FALSE}
+library(dplyr)
+library(tidyr)
+library(purrr)
+library(readr)
+library(knitr)
+#library(knitr)
+library(pander)
+library(kableExtra)
+```
+
+```{r eval = FALSE, echo = FALSE}
+#helper functions
+choose_questions <- function(n, chapters, level)
+{
+  x <- params$q %>%
+    filter(Chapter == chapters, Level == level) %>%
+    .$Question_number
+  
+  #first if condition needed because sample interprets one positive integer as sequence 1:integer
+  #n condition needed to prevent question being generated with n = 0
+  if(length(x) == 1 & n != 0)
+  {
+    x
+  }else{
+    set.seed(params$questions_version)
+    sample(x, n, replace = FALSE)
+  }
+  
+}
+
+horizontal_row_bind_list <- function(x,y)
+{
+  z <- list()
+  
+  map(1:length(x), 
+      function(i){
+        z[[i]] <- c(x[[i]], y[[i]])
+      }
+  )
+  
+}
+
+#choose questions
+q_easy <- map2(params$n_chosen$Easy, params$n_chosen$Chapter, choose_questions, level = "Easy")
+q_medium <- map2(params$n_chosen$Medium, params$n_chosen$Chapter, choose_questions, level = "Medium")
+q_hard <- map2(params$n_chosen$Hard, params$n_chosen$Chapter, choose_questions, level = "Hard")
+
+
+q_all <- reduce(list(q_easy, q_medium, q_hard), horizontal_row_bind_list) %>% unlist
+```
+
+<br>
+
+```{r echo = FALSE, comment = NA}
+#k counts questions
+k <- 0
+
+answers_list <- list()
+questions_list <- list()
+
+for(i in params$q_all)
+{
+
+#find the correct answer to a question
+correct_answer <- which(letters == (params$qa %>% filter(Question_number == i) %>% .$Answer)[1])
+
+#permuting the order of choices and saving the permutatation to perm
+choice <- params$qa %>% filter(Question_number == i)
+set.seed(params$choices_version)
+choice <- choice[perm <- sample(1:5),]
+
+#finding the correct answer letter after permutation
+correct <- letters[which(perm == correct_answer)]
+
+k <- k + 1
+
+#&nbsp; is HTML space
+#limiting 6 questions per page to avoid questions being split on two pages
+if((k %% 6) != 0){
+questions_list[[k]] <- paste(k, ".&nbsp;",
+    choice$Question[1],
+    "<br>a) ", choice$Possible_answers[1],
+    "<br>b) ", choice$Possible_answers[2],
+    "<br>c) ", choice$Possible_answers[3],
+    "<br>d) ", choice$Possible_answers[4],
+    "<br>e) ", choice$Possible_answers[5],
+    "<br><br>",
+    sep = "")
+}else{
+questions_list[[k]] <- paste(k, ".&nbsp;",
+    choice$Question[1],
+    "<br>a) ", choice$Possible_answers[1],
+    "<br>b) ", choice$Possible_answers[2],
+    "<br>c) ", choice$Possible_answers[3],
+    "<br>d) ", choice$Possible_answers[4],
+    "<br>e) ", choice$Possible_answers[5],
+    "<P style='page-break-before: always'>",
+    sep = "")
+}
+
+
+answers_list[[k]] <- correct
+}
+
+#pander doesn't work with the pipe %>% so we have to use pander(x)
+pander(questions_list %>% unlist %>% cat)
+
+if(params$add_correct == TRUE)
+{
+  
+cat("Questions version: ", params$questions_version, "\n",
+    "Test group: ", params$choices_version, "\n",sep = "")
+  
+#adding correct answers to the bottom of the test
+cat("Answers: ", sep = "")  
+
+for(i in 1:length(unlist(answers_list)))
+cat(i, ".", unlist(answers_list)[i], " ", sep = "")
+kable(params$n_chosen) %>% kable_styling(bootstrap_options = c("striped", "hover"))
+}
+```
+
+

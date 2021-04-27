@@ -1,0 +1,143 @@
+---
+title: "Question base <br> `r Sys.Date()`"
+output: html_document
+params:
+  qa: NA
+  n_list: NA
+
+---
+  
+<!-- css settings -->
+  
+  
+<style type="text/css">
+  
+body{ /* Normal  */
+      font-size: 10pt;
+}
+td {  /* Table  */
+    font-size: 8px;
+}
+h1.title {
+  font-size: 18pt;
+  color: BlueRibbon;
+  text-align: center;
+}
+h1 { /* Header 1 */
+    font-size: 28px;
+  color: DarkBlue;
+}
+h2 { /* Header 2 */
+    font-size: 22px;
+  color: DarkBlue;
+}
+h3 { /* Header 3 */
+    font-size: 18px;
+  font-family: "Times New Roman", Times, serif;
+  color: DarkBlue;
+}
+code.r{ /* Code block */
+    font-size: 12px;
+}
+pre { /* Code block - determines code spacing between lines */
+    font-size: 14px;
+}
+</style>
+
+
+```{r echo = FALSE, comment = NA, message = FALSE}
+library(dplyr)
+library(tidyr)
+library(purrr)
+library(readr)
+#library(knitr)
+library(pander)
+```
+
+
+<br>
+  
+```{r echo = FALSE, comment = NA}
+base_list <- params$qa %>% arrange(Chapter, Level)
+
+k <- 0
+add_base_list <- list()
+
+for(i in unique(base_list$Question_number)){
+  
+  k <- k + 1
+  
+  current_question <- base_list %>% filter(Question_number == i)
+  current_chapter <- current_question$Chapter[1]
+  current_level <- current_question$Level[1]
+  
+  if(k == 1){
+    reference_chapter <- current_chapter
+    reference_level <- current_level
+    
+    add_base_list[[k]] <- paste("<b>", reference_chapter, "</b>:<br><br>",
+                          "<b>", reference_level, "</b>:<br><br>",
+                          k, ".&nbsp;",
+                          current_question$Question[1],
+                          "<br>a) ", current_question$Possible_answers[1],
+                          "<br>b) ", current_question$Possible_answers[2],
+                          "<br>c) ", current_question$Possible_answers[3],
+                          "<br>d) ", current_question$Possible_answers[4],
+                          "<br>e) ", current_question$Possible_answers[5],
+                          "<br>Correct: ", current_question$Answer[1],
+                          "<br><br>",
+                          sep = "")
+  }else{
+    if(current_chapter == reference_chapter){
+      if(current_level != reference_level){
+        reference_level <- current_level
+        
+        add_base_list[[k]] <- paste("<b>", reference_level, "</b>:<br><br>",
+                              k, ".&nbsp;",
+                              current_question$Question[1],
+                              "<br>a) ", current_question$Possible_answers[1],
+                              "<br>b) ", current_question$Possible_answers[2],
+                              "<br>c) ", current_question$Possible_answers[3],
+                              "<br>d) ", current_question$Possible_answers[4],
+                              "<br>e) ", current_question$Possible_answers[5],
+                              "<br>Correct: ", current_question$Answer[1],
+                              "<br><br>", 
+                              sep = "")
+      }else{
+        add_base_list[[k]] <- paste(k, ".&nbsp;",
+                              current_question$Question[1],
+                              "<br>a) ", current_question$Possible_answers[1],
+                              "<br>b) ", current_question$Possible_answers[2],
+                              "<br>c) ", current_question$Possible_answers[3],
+                              "<br>d) ", current_question$Possible_answers[4],
+                              "<br>e) ", current_question$Possible_answers[5],
+                              "<br>Correct: ", current_question$Answer[1],
+                              "<br><br>",
+                              sep = "")
+      }
+    }else{
+      reference_chapter <- current_chapter
+      reference_level <- current_level
+      
+      add_base_list[[k]] <- paste("<b>", reference_chapter, "</b>:<br><br>",
+                            "<b>", reference_level, "</b>:<br><br>",
+                            k, ".&nbsp;",
+                            current_question$Question[1],
+                            "<br>a) ", current_question$Possible_answers[1],
+                            "<br>b) ", current_question$Possible_answers[2],
+                            "<br>c) ", current_question$Possible_answers[3],
+                            "<br>d) ", current_question$Possible_answers[4],
+                            "<br>e) ", current_question$Possible_answers[5],
+                            "<br>Correct: ", current_question$Answer[1],
+                            "<br><br>",
+                            sep = "")
+    }
+  }
+}
+
+kable(params$n_list) %>% kable_styling(bootstrap_options = c("striped", "hover"))
+
+pander(add_base_list %>% unlist %>% cat)
+```
+
+
