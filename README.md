@@ -1,3 +1,5 @@
+
+![icon_hex](https://user-images.githubusercontent.com/60142390/116230102-8a58c980-a757-11eb-973b-0a6e9c789d45.png)
 # TestR - an exam generating app
 
 TestR combines the power of R and R Markdown with the interactivity of Shiny to deliver a multiple choice exam generating app. It allows the user to select questions based on the chapter and difficulty level. These choices are then used to randomly pick the selected number of questions from the question base. If the user is not satisfied with certain selected questions, they can be swapped with other questions from the same chapter-difficulty subgroup.
